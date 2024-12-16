@@ -1,0 +1,501 @@
+* {
+    margin: 0;
+    padding: 0x;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+     body {
+        background-color: #D1D5DB;
+     }
+    
+
+.main-header {
+    z-index: 100;
+    width: 100%;
+    background: #1E3A8A;
+	box-shadow: 0px 3px 4px 0px rgba(0,0,0,.4);
+    position: fixed;
+}
+.menu-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    padding: 15px;
+}
+
+.menu-wrap p{
+    width: 100%;
+    margin-left: 40px;
+    color: #111827;
+    font-size: 1.3rem;
+}
+.logo-wrap {
+    width: 200px;
+    margin-left: -30px;
+}
+.logo-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+/* =====================
+    Mobile Nav closed
+====================== */
+
+
+.main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0vh;
+    transition: height .0s ease-out .4s, opacity .2s ease-out .2s, padding-left .2s ease-in 0s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 400;
+    overflow: hidden;
+    background-color: #1E3A8A;
+    padding-left: 100%;
+    word-spacing: -1px;
+}
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.woff2') format('woff2'),
+         url('fonts/Roboto-Regular.woff') format('woff');
+}
+
+
+.nav-item {
+    display: block;
+    padding: 18px 10px;
+    margin: 5px auto;
+    color: #ffffff;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    z-index: 100;
+}
+.nav-item:first-of-type {
+    margin-top: 20vh;
+}
+
+
+.drop-trigger {
+    height: 34px;
+    width: 50px;
+    position: relative;
+    background: rgba(255, 255, 255, 0);
+    transition: all .1s ease-out 0s;
+    z-index: 450;
+    border-width: 0;
+    margin-left: auto;
+}
+
+.drop-trigger .btn-bar {
+    position: absolute;
+    display: block;
+    top: 20%;
+    height: 4px;
+    width: 60%;
+    transition: all .4s ease-in 0s;
+    background: rgb(250,250,250);
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    transform: translateX(-50%) translateY(-0%) rotate(-0deg);
+}
+.btn-bar.middle {
+    top: 50%;
+    transform: translateX(-50%)  translateY(-50%) rotate(0deg);
+}
+.btn-bar.bottom {
+    top: calc(80% - 3px);
+}
+
+.nav-revert {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    z-index: 1;
+}
+
+#nav-tog {
+    display: none;
+}
+
+/* =====================
+    Mobile Nav open
+====================== */
+
+
+#nav-tog:checked ~ .drop-trigger .btn-bar {
+    transition-timing-function: ease-out;
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar {
+    top: 50%;
+    background: rgb(255, 255, 255);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.top {
+    transform: translateX(-50%)  translateY(-50%) rotate(-315deg);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.middle {
+    transform: translateX(-50%)  translateY(-50%) rotate(-225deg);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.bottom {
+    transform: translateX(-50%) translateY(-50%) rotate(-225deg);
+}
+#nav-tog:checked ~ .main-nav {
+    transition: height .0s ease-in 0s, opacity .2s ease-in 0s, padding-left .23s ease-out .21s;
+    opacity: 1;
+    height: 100vh;
+    padding-left: 0%;
+}
+
+/* ============================
+    Large screen nav
+============================= */
+
+
+@media screen and (min-width: 1310px){
+    /* Hides mobile-specific elements */
+    .drop-trigger,
+    .nav-revert {
+        display: none;
+    }
+    .main-nav {
+        height: auto;
+        position: relative;
+        padding-left: 0%;
+        flex-direction: row;
+        justify-content: flex-end;
+        opacity: 1;
+        background: rgba(0,0,0,0);
+    }
+    .nav-item:first-of-type{
+        margin-top: 0;
+    }
+    .nav-item {
+        font-size: 28px;
+        margin: 0 5px;
+        color:#ffffff;
+        width: auto;
+    }
+}
+
+
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+/* Overall Agent Profile Container */
+.agent-profile {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo Container */
+.agent-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.agent-logo {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.agent-logo:hover {
+    transform: scale(1.05); /* Image hover effect */
+}
+
+/* Agent Header Section */
+.agent-header-section {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Agent Name */
+.agent-name {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Tagline */
+.agent-tagline {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+/* Job Ease Progress Bar */
+.job-ease {
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.job-ease-label {
+    font-size: 1.1rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.progress-bar-container {
+    margin-top: 10px;
+    width: 100%;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    appearance: none;
+    border-radius: 5px;
+    background-color: #ddd;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #4caf50; /* Green color for filled portion */
+    border-radius: 5px;
+}
+
+.job-ease-text {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Agent Bio Section */
+.agent-bio {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1rem;
+    color: #333;
+    border: 1px solid #ddd; /* Border for agent bio */
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #2980b9; /* Hover color for links */
+}
+
+/* Reviews Section */
+.reviews-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-card {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.review-text {
+    font-size: 1rem;
+    color: #333;
+    font-style: italic;
+}
+
+.review-author {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .agent-profile {
+        padding: 15px;
+    }
+
+    .agent-name {
+        font-size: 1.8rem;
+    }
+
+    .star-rating i {
+        font-size: 1.2rem;
+    }
+
+    .job-ease-label,
+    .rating-text {
+        font-size: 1rem;
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .review-text,
+    .review-author {
+        font-size: 0.9rem;
+    }
+
+    .progress-bar-container {
+        margin-top: 5px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.agent-name {
+    font-size: 28px;
+}
+
+.agent-logo-infopage {
+    width: 100%;
+    max-width: 500px;
+}
+
+.agent-tagline {
+    color: #4caf50;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.rating-text {
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #111827;
+    text-decoration: underline;
+}
+
+.chance-percentage {
+    color: red;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+h5, .job-ease-text {
+    font-size: 30px;
+    color: #111827;
+}
+
+
+.fine-print {
+    color: red;
+    margin-top: 10px;
+    text-decoration: underline;
+}
+
+.agent-bio {
+    text-align: center;
+}
+
+a, .contact-details-agents {
+    font-size: 20px;
+    text-decoration: none;
+    color: #111827;
+}
+
+
+.apply-button-agents {
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    font-size: 17px;
+    border: none;
+    background-color: #1E3A8A;
+    color: white;
+    border-radius: 15px;
+}
+
+.apply-button-agents:hover {
+    transition: .2s;
+    cursor: pointer;
+    text-decoration: underline;
+    height: 51px;
+    width: 151px;
+    font-size: 18px;
+}
