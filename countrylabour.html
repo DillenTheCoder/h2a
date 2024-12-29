@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <title>Global Work Bridge</title>
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11521284841"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11521284841');
+</script>
+<script>
+    window.onload = function() {
+      document.querySelector('.main-heading h1').classList.add('fade-in');
+    }
+  </script>
+
+
+
+<body>
+    <header class='main-header'>
+        <div class="menu-wrap">
+            <!-- Logo container -->
+            <a href='index.html' target='_blank' class="logo-wrap">
+                <img class="logo" src="images/image.png" alt="Logo" >
+            </a>
+            
+            <!-- When this is checked, nav menu is dropped -->
+            <input type='checkbox' id='nav-tog'>
+    
+            <!-- Hamburger btn -->
+            <label for='nav-tog'  class="drop-trigger">
+                <!-- Hamburg bars -->
+                <span class="btn-bar top"></span>
+                <span class='btn-bar middle'></span>
+                <span class='btn-bar bottom'></span>
+            </label>
+            <!-- Menu -->
+            <nav class="main-nav">
+                <!-- This covers the whole background of the dropped menu -->
+                <label for='nav-tog' class='nav-revert'></label>
+                <a href='/index.html' class="nav-item"><span>Home</span></a><br>
+                <a href='about.html' class="nav-item"><span>About Us</span></a><br>
+                <a href='contact.html' class="nav-item"><span>Contact Us</span></a><br>
+                <a href='h2a.html' class="nav-item"><span>H2A Agents</span></a><br>
+                <a href='h2b.html' class="nav-item"><span>H2B Agent</span></a><br>
+            </nav>
+        </div>
+    </header><br><br><br><br><br><br><br>
+
+
+
+
+
+    <div class="agent-profile">
+      <div class="agent-header-section">
+          <h1 class="agent-name">Country Labour</h1>
+          <div class="agent-logo-container">
+              <div class="agent-logo-image">
+                  <img class="agent-logo-infopage" src="agent-logos/countrylabour.jpg" alt="Agent Logo">
+              </div>
+          </div>
+          <br>
+  
+          <!-- Job Ease Progress Bar -->
+          <div class="job-ease">
+              <div class="progress-bar-container"></div>
+              <h5 class="job-ease-text">
+                  You have a
+                  <progress id="job-ease-bar" value="70" max="100"></progress>
+                  <p class="chance-percentage-orange">70%</p>
+                  chance of getting a job
+                  <h6 class="fine-print">IF YOU HAVE REQUIRED SKILLS</h6>
+              </h5>
+          </div>
+  
+          <div class="agent-info-section">
+              <p class="agent-bio">
+                  Country Labour, based in South Africa, specializes in connecting skilled workers with United States farmers through the H-2A Visa work program. We recruit individuals with expertise in general farming, mechanics, and truck driving, ensuring they meet the specific needs of each farm. Our services include submitting applications, marketing resumes, and coordinating interviews with farmers. Once approved, we guide workers through the documentation process, facilitating their journey to the United States and their return to South Africa at the season's end. Beyond placements, we serve as the vital link between farmers and their workers, ensuring seamless communication and support.
+              </p>
+              <br>
+  
+              <div class="contact-details-agents">
+                  <p><strong>Email:<br></strong></p>
+                  <a href="mailto:cl@countrylabour.co.za">cl@countrylabour.co.za</a>
+              </div>
+              <br>
+  
+              <div class="contact-details-agents">
+                  <p><strong>Website:<br></strong></p>
+                  <a href="https://countrylabour.co.za/" target="_blank">https://countrylabour.co.za/</a>
+              </div>
+              <br>
+  
+              <a href="https://portal.countrylabour.co.za/sign-up" target="_blank">
+                  <button class="apply-button-agents">APPLY NOW</button>
+              </a>
+              <br>
+          </div>
+      </div>
+  </div>
+  
+
+
+    <footer>
+        <div class="footer-container">
+          <nav class="footer-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT US</a>
+          </nav>
+          <div class="footer-divider"></div>
+          <p class="footer-info">
+            © <span id="current-year"></span>Global Work Bridge. All rights reserved.<br>
+            Built with ❤️ for simplicity and ease of use
+          </p>
+        </div>
+      </footer>
+
+
+
+
+
+
+
+
+    </body>
+    </html>

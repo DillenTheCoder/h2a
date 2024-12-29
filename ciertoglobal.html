@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <title>Global Work Bridge</title>
+
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11521284841"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11521284841');
+</script>
+
+<script>
+    window.onload = function() {
+      document.querySelector('.main-heading h1').classList.add('fade-in');
+    }
+  </script>
+
+
+
+<body>
+    <header class='main-header'>
+        <div class="menu-wrap">
+            <!-- Logo container -->
+            <a href='index.html' target='_blank' class="logo-wrap">
+                <img class="logo" src="images/image.png" alt="Logo" >
+            </a>
+            
+            <!-- When this is checked, nav menu is dropped -->
+            <input type='checkbox' id='nav-tog'>
+    
+            <!-- Hamburger btn -->
+            <label for='nav-tog'  class="drop-trigger">
+                <!-- Hamburg bars -->
+                <span class="btn-bar top"></span>
+                <span class='btn-bar middle'></span>
+                <span class='btn-bar bottom'></span>
+            </label>
+            <!-- Menu -->
+            <nav class="main-nav">
+                <!-- This covers the whole background of the dropped menu -->
+                <label for='nav-tog' class='nav-revert'></label>
+                <a href='/index.html' class="nav-item"><span>Home</span></a><br>
+                <a href='about.html' class="nav-item"><span>About Us</span></a><br>
+                <a href='contact.html' class="nav-item"><span>Contact Us</span></a><br>
+                <a href='h2a.html' class="nav-item"><span>H2A Agents</span></a><br>
+                <a href='h2b.html' class="nav-item"><span>H2B Agent</span></a><br>
+            </nav>
+        </div>
+    </header><br><br><br><br><br><br><br>
+
+
+
+
+
+    <div class="agent-profile">
+        <div class="agent-header-section">
+            <h1 class="agent-name">Cierto Global</h1>
+            <div class="agent-logo-container">
+                
+          <div class="agent-logo-image"><img class="agent-logo-infopage" src="agent-logos/CiertoGlobal.png" alt="Agent Logo"></div>
+            </div>
+            <p class="agent-tagline"><b>Connecting South African workers with H2B opportunities.</b></p>
+
+    
+            <!-- Job Ease Progress Bar -->
+            <div class="job-ease">
+                <div class="progress-bar-container">
+                    
+                </div>
+                <h5 class="job-ease-text">You have a<progress id="job-ease-bar" value="50" max="100"></progress><p class="chance-percentage-red">50%</p>chance of getting a job<h6 class="fine-print">IF YOU HAVE REQUIRED SKILLS</h6></h5>
+            </div>
+    <center>
+        <div class="agent-info-section">
+            <p class="agent-bio">CIERTO provides a workforce of highly motivated, well-trained H2A and H2B workers who can significantly boost your productivity. Their workers not only contribute to immediate results but also deliver long-term efficiency gains. CIERTO excels at identifying and matching qualified candidates to your specific job needs. They also ensure that workers are trained to meet your exact specifications. This approach sets the standard for workforce excellence and consistent performance.</p>
+            <div class="contact-details"><br>
+
+         <div class="contact-details-agents"><p><strong>Email:<br></strong></p>
+            <a href="mailto:H2B@CiertoGlobal.Org%20">H2B@CiertoGlobal.Org</a></div><br>
+
+
+         <div class="contact-details-agents"><p><strong>Website:<br></strong></p>
+            <a href="https://ciertoglobal.org" target="_blank">https://ciertoglobal.org</a></div><br>
+</center>
+
+         <center><a href="https://ciertoglobal.org/h2b-visa/" target="_blank"><button class="apply-button-agents">APPLY NOW</button></a></p></div></center>
+            </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div><br>
+
+
+
+    <style>
+      #content {
+        text-align: center;
+        padding: 50px;
+        position: relative;
+        z-index: 1;
+      }
+  
+      /* Popup Styling */
+      #pcWarning {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        color: black;
+        padding: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+      }
+  
+      #pcWarning h2 {
+          margin-top: 170px;
+        margin-bottom: 20px;
+        font-size: 40px;
+      }
+  
+      .pcWarning, p {
+          font-size: 20px;
+      }
+  
+      #pcWarning img {
+        max-width: 400px;
+        margin: 10px 0;
+      }
+  
+      #pcWarning button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 30px;
+      }
+  
+      #continueButton {
+        background-color: #6c757d;
+        color: white;
+      }
+  
+      /* Show popup and blur background for large screens */
+      @media (min-width: 750px) {
+        #pcWarning {
+          display: block;
+        }
+  
+        .background.blur {
+          filter: blur(100px);
+        }
+  
+        body.fixed {
+          overflow: hidden; /* Prevent scrolling */
+        }
+      }
+  
+  
+  
+  
+  
+  
+    </style>
+  </head>
+  <body class="fixed">
+    <div class="background"></div>
+  
+    <div id="pcWarning">
+      <h2>This website works best on mobile devices.</h2>
+      <p>Scan the QR code below to open this site on your mobile device:</p>
+      <img src="images/GlobalWorkBridgeQRCode.png" alt="QR Code">
+      <p>Or, continue using the website on your PC.</p>
+      <button id="continueButton">Continue Anyway</button>
+    </div>
+  
+    <script>
+      // Get references to elements
+      const continueButton = document.getElementById('continueButton');
+      const pcWarning = document.getElementById('pcWarning');
+      const background = document.querySelector('.background');
+  
+      // Add click event to dismiss the popup
+      continueButton.addEventListener('click', () => {
+        pcWarning.style.display = 'none'; // Hide popup
+        background.classList.remove('blur'); // Remove blur effect
+        document.body.classList.remove('fixed'); // Re-enable scrolling
+      });
+  
+      // Automatically apply blur effect if screen width >= 1100px
+      if (window.innerWidth >= 1100) {
+        background.classList.add('blur'); // Add blur effect
+      }
+    </script>
+
+
+
+    <footer>
+        <div class="footer-container">
+          <nav class="footer-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="contact.html">CONTACT US</a>
+          </nav>
+          <div class="footer-divider"></div>
+          <p class="footer-info">
+            © <span id="current-year"></span>Global Work Bridge. All rights reserved.<br>
+            Built with ❤️ for simplicity and ease of use
+          </p>
+        </div>
+      </footer>
+
+
+
+
+
+    </body>
+    </html>

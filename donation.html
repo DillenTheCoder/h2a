@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Global Work Bridge</title>
+    <script>
+        window.onload = function() {
+            document.querySelector('.main-heading h1').classList.add('fade-in');
+        }
+    </script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11521284841"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11521284841');
+</script>
+<body>
+    <header class='main-header'>
+        <div class="menu-wrap">
+            <a href='index.html' target='_blank' class="logo-wrap">
+                <img class="logo" src="images/image.png" alt="Logo">
+            </a>
+            <input type='checkbox' id='nav-tog'>
+            <label for='nav-tog' class="drop-trigger">
+                <span class="btn-bar top"></span>
+                <span class='btn-bar middle'></span>
+                <span class='btn-bar bottom'></span>
+            </label>
+            <nav class="main-nav">
+                <label for='nav-tog' class='nav-revert'></label>
+                <a href='index.html' class="nav-item"><span>Home</span></a><br>
+                <a href='about.html' class="nav-item"><span>About Us</span></a><br>
+                <a href='contact.html' class="nav-item"><span>Contact Us</span></a><br>
+                <a href='h2a.html' class="nav-item"><span>H2A Agents</span></a><br>
+                <a href='h2b.html' class="nav-item"><span>H2B Agent</span></a><br>
+            </nav>
+        </div>
+    </header><br><br><br><br><br><br><br><br>
+    <div class="main-heading">
+        <h1 class="main-heading-text-h1">Global Work Bridge</h1>
+    </div>
+    <h6 class="main-heading-text-h2">Your Donations Mean A Lot Here's Why</h6><br><br>
+    <center>
+
+        
+       
+
+
+
+
+
+        <style>
+            /* Styling for the donation card */
+            .donation-card {
+              background-color: white;
+              padding: 30px;
+              border-radius: 15px;
+              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+              text-align: center;
+              width: 100%;
+              max-width: 400px;
+              box-sizing: border-box;
+            }
+          
+            .donation-title {
+              color: #333;
+              font-size: 28px;
+              margin-bottom: 15px;
+              font-weight: bold;
+            }
+          
+            .donation-description {
+              color: #555;
+              font-size: 18px;
+              margin-bottom: 25px;
+              line-height: 1.6;
+            }
+          
+            .input-donation {
+              padding: 12px;
+              font-size: 18px;
+              margin-top: 10px;
+              width: 100%;
+              max-width: 350px;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+              text-align: left;
+              box-sizing: border-box;
+            }
+          
+            .payfast-button {
+              background-color: #1c80d2;
+              color: white;
+              padding: 14px 28px;
+              border-radius: 8px;
+              font-size: 18px;
+              text-align: center;
+              display: inline-block;
+              cursor: pointer;
+              border: none;
+              transition: background-color 0.3s;
+              width: 100%;
+              max-width: 350px;
+            }
+          
+            .payfast-button:hover {
+              background-color: #1768a5;
+            }
+          
+            .thank-you-message {
+              color: #333;
+              font-size: 16px;
+              margin-top: 30px;
+              font-style: italic;
+            }
+          </style>
+          </head>
+          <body>
+          
+          <center>
+            <div class="donation-card">
+              <p class="donation-description">
+                Your support means the world to me
+              </p>
+              
+              <!-- Donation Form -->
+              <div class="donation-button-container">
+                <form action="https://www.payfast.co.za/eng/process" method="post">
+                  <!-- PayFast Merchant Details (Replace these with your actual PayFast details) -->
+                  <input type="hidden" name="merchant_id" value="26472787">
+                  <input type="hidden" name="merchant_key" value="qbgvq9xm9ygz7">
+                  <input type="hidden" name="return_url" value="https://yourwebsite.com/thank-you"> <!-- Replace with your URL -->
+                  <input type="hidden" name="cancel_url" value="https://yourwebsite.com/cancel"> <!-- Replace with your URL -->
+                  <input type="hidden" name="notify_url" value="https://yourwebsite.com/notify"> <!-- Replace with your URL -->
+          
+                  <!-- Payment Information -->
+                  <input type="hidden" name="item_name" value="Donation"> <!-- Item Name (required by PayFast) -->
+                  <input type="hidden" name="item_id" value="donation-001"> <!-- A unique identifier for the donation -->
+          
+                  <!-- Allow user to enter custom donation amount -->
+                  <input type="text" name="amount" id="donation-amount" class="input-donation" placeholder="R 10.00" required min="10" step="0.01">
+          
+                  <!-- Donate Button -->
+                  <button type="submit" class="payfast-button">Donate with PayFast</button>
+                </form>
+              </div>
+            </div>
+          </center>
+          
+          <script>
+            // JavaScript to add "R" symbol before the amount and restrict input to numbers only
+            document.getElementById('donation-amount').addEventListener('input', function(e) {
+              // Remove all non-numeric characters except for the decimal point
+              var value = e.target.value.replace(/[^0-9.]/g, '');
+          
+              // If there's any input, prepend the "R" symbol, otherwise reset the value
+              if (value) {
+                e.target.value = 'R ' + value; // Add "R" before the value
+              } else {
+                e.target.value = ''; // If no number is entered, reset the input
+              }
+            });
+          
+            // Ensure the form submits only the numeric value (without "R")
+            document.querySelector('form').addEventListener('submit', function(e) {
+              var donationInput = document.getElementById('donation-amount');
+              var numericValue = donationInput.value.replace(/[^\d.]/g, ''); // Remove "R" symbol and any non-numeric characters
+              donationInput.value = numericValue; // Set the numeric value to be submitted
+            });
+          </script>
+          
+          </body>
+          </html>
+          
+
+
+
+
+        
+
+        
+
+
+    </center>
+    <div class="about-us-text2">
+        - I can’t thank you enough for your kind donation. As a 19-year-old trying to make a difference, it means the world to me that you’re supporting this journey. Your donation helps keep the website running smoothly, covering the costs of hosting and domain fees every year. This platform is designed to help others, and your support allows me to keep it alive and growing, so we can continue making an impact together. Your generosity is truly appreciated, and I’m incredibly grateful for people like you who believe in the cause. Thank you for being a part of this!
+    </div><br>
+    <footer>
+        <div class="footer-container">
+            <nav class="footer-links">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT US</a>
+                <a href="contact.html">CONTACT US</a>
+            </nav>
+            <div class="footer-divider"></div>
+            <p class="footer-info">
+                © <span id="current-year"></span>Global Work Bridge. All rights reserved.<br>
+                Built with ❤️ for simplicity and ease of use
+            </p>
+        </div>
+    </footer>
+    <script>
+        window.addEventListener('deviceorientation', function(event) {
+            var gamma = event.gamma; // Left to right tilt
+            var beta = event.beta;   // Front to back tilt
+            var glareElements = document.querySelectorAll('.cta-buttons button::before');
+            glareElements.forEach(function(element) {
+                var glare = element;
+                var offsetX = gamma * 0.2; // Horizontal glare movement
+                var offsetY = beta * 0.2;  // Vertical glare movement
+                glare.style.transform = 'translate(-50%, -50%) scale(1.2) translate(' + offsetX + 'px, ' + offsetY + 'px)';
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SQE168MYXC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SQE168MYXC');
+</script>
+
+
+
+</body>
+</html>

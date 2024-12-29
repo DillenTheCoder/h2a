@@ -1,0 +1,935 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0x;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+     body {
+        font-family: 'Quicksand', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        overflow-x: hidden;
+     }
+    
+
+.main-header {
+    z-index: 100;
+    width: 100%;
+    background: #1E3A8A;
+	box-shadow: 0px 3px 4px 0px rgba(0,0,0,.4);
+    position: fixed;
+}
+.menu-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    padding: 15px;
+}
+
+.menu-wrap p{
+    width: 100%;
+    margin-left: 40px;
+    color: #111827;
+    font-size: 1.3rem;
+}
+.logo-wrap {
+    width: 200px;
+    margin-left: -30px;
+}
+.logo-wrap img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+/* =====================
+    Mobile Nav closed
+====================== */
+
+
+.main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0vh;
+    transition: height .0s ease-out .4s, opacity .2s ease-out .2s, padding-left .2s ease-in 0s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 400;
+    overflow: hidden;
+    background-color: #1E3A8A;
+    padding-left: 100%;
+    word-spacing: -1px;
+}
+
+
+.nav-item {
+    display: block;
+    padding: 18px 10px;
+    margin: 5px auto;
+    color: #ffffff;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    z-index: 100;
+}
+.nav-item:first-of-type {
+    margin-top: 20vh;
+}
+
+
+.drop-trigger {
+    height: 34px;
+    width: 50px;
+    position: relative;
+    background: rgba(255, 255, 255, 0);
+    transition: all .1s ease-out 0s;
+    z-index: 450;
+    border-width: 0;
+    margin-left: auto;
+}
+
+.drop-trigger .btn-bar {
+    position: absolute;
+    display: block;
+    top: 20%;
+    height: 4px;
+    width: 60%;
+    transition: all .4s ease-in 0s;
+    background: rgb(250,250,250);
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    transform: translateX(-50%) translateY(-0%) rotate(-0deg);
+}
+.btn-bar.middle {
+    top: 50%;
+    transform: translateX(-50%)  translateY(-50%) rotate(0deg);
+}
+.btn-bar.bottom {
+    top: calc(80% - 3px);
+}
+
+.nav-revert {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    z-index: 1;
+}
+
+#nav-tog {
+    display: none;
+}
+
+/* =====================
+    Mobile Nav open
+====================== */
+
+
+#nav-tog:checked ~ .drop-trigger .btn-bar {
+    transition-timing-function: ease-out;
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar {
+    top: 50%;
+    background: rgb(255, 255, 255);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.top {
+    transform: translateX(-50%)  translateY(-50%) rotate(-315deg);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.middle {
+    transform: translateX(-50%)  translateY(-50%) rotate(-225deg);
+}
+#nav-tog:checked ~ .drop-trigger .btn-bar.bottom {
+    transform: translateX(-50%) translateY(-50%) rotate(-225deg);
+}
+#nav-tog:checked ~ .main-nav {
+    transition: height .0s ease-in 0s, opacity .2s ease-in 0s, padding-left .23s ease-out .21s;
+    opacity: 1;
+    height: 100vh;
+    padding-left: 0%;
+}
+
+/* ============================
+    Large screen nav
+============================= */
+
+
+@media screen and (min-width: 1310px){
+    /* Hides mobile-specific elements */
+    .drop-trigger,
+    .nav-revert {
+        display: none;
+    }
+    .main-nav {
+        height: auto;
+        position: relative;
+        padding-left: 0%;
+        flex-direction: row;
+        justify-content: flex-end;
+        opacity: 1;
+        background: rgba(0,0,0,0);
+    }
+    .nav-item:first-of-type{
+        margin-top: 0;
+    }
+    .nav-item {
+        font-size: 28px;
+        margin: 0 5px;
+        color:#ffffff;
+        width: auto;
+    }
+}
+
+
+
+/*Home Screen*/
+
+/* Set up the initial state for fading (fully transparent) */
+.main-heading h1, .sub-heading {
+    text-align: center;
+    font-size: 10px;
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease-in-out forwards; /* Fade-in animation */
+}
+
+.main-heading h2, .sub-heading {
+    text-align: center;
+    font-size: 15px;
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease-in-out forwards; /* Fade-in animation */
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity 0 (invisible) */
+    }
+    to {
+        opacity: 1; /* End with opacity 1 (fully visible) */
+    }
+}
+
+
+
+
+.main-heading h1 {
+    color: #1E3A8A;
+    text-align: center;
+    font-size: 36px;
+    opacity: 1;
+    text-decoration: solid;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+h6 {
+    color: #1E3A8A;
+    text-align: center;
+    font-size: 15px;
+    opacity: 1;
+    text-decoration: solid;
+    padding: 5px;
+    margin: -10px;
+}
+
+h6, u , i {
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    opacity: 1;
+    text-decoration: solid;
+    padding: 5px;
+}
+
+
+/* Add the fade-in class to trigger animation */
+.main-heading h1.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Add the fade-in class to trigger animation */
+.main-heading h2.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+
+
+
+/* General button styling */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 40px;
+    gap: 10px; /* Add spacing between buttons */
+}
+
+.cta-buttons a {
+    width: 200px; /* Set a consistent width for links */
+    display: inline-block; /* Allow buttons to wrap and stack */
+    position: relative; /* Necessary for positioning the glare */
+}
+
+.cta-buttons button {
+    width: 100%; /* Make the button fill the width of its container */
+    padding: 10px; /* Add padding for better clickability */
+    font-size: 16px; /* Adjust text size */
+    border-radius: 16px; /* Optional: Add rounded corners */
+    background-color: #1E3A8A; /* Set button background color */
+    color: #ffffff; /* Set button text color */
+    transition: background-color 0.3s; /* Add a hover effect */
+    border: none; /* Remove button border */
+    position: relative; /* Necessary for positioning the glare */
+    overflow: hidden; /* Hide the glare outside the button */
+}
+
+/* Glare effect */
+.cta-buttons button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.038); /* Light glare effect */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.8); /* Start with smaller glare */
+    opacity: 0; /* Initially hidden */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+.cta-buttons button:hover {
+    background-color: #0056b3; /* Darken background on hover */
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.367);
+}
+
+.cta-buttons button:hover::before {
+    opacity: 1; /* Show glare effect on hover */
+    transform: translate(-50%, -50%) scale(1.2); /* Make glare larger on hover */
+}
+
+
+/* Style for the WhatsApp icon inside the button */
+.cta-buttons button i {
+    margin-right: 8px; /* Add space between the icon and text */
+    font-size: 18px; /* Adjust icon size */
+}
+
+/* Ensure images cover the container area properly */
+.cta-button-item {
+    text-align: center; /* Center the button and image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-image {
+    width: 100%; /* Image fills the container width */
+    height: 150px; /* Set a consistent height for all images */
+    object-fit: cover; /* Ensure the image covers the container */
+    margin-bottom: 10px; /* Space between image and button */
+    border-radius: 8px; /* Optional: Rounded corners for the image */
+}
+
+
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .cta-buttons {
+        padding: 20px;
+        flex-direction: row; /* Ensure 2 buttons per row on mobile */
+        justify-content: space-between; /* Ensure the buttons are spaced out */
+    }
+
+    .cta-buttons a {
+        width: 48%; /* Make buttons take up less space on smaller screens */
+    }
+}
+
+/* Media Query for larger screens (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .cta-buttons {
+        flex-direction: row; /* Display all buttons next to each other */
+        justify-content: space-between; /* Evenly space the buttons */
+    }
+
+    .cta-buttons a {
+        width: 200px; /* Fixed width for each button */
+    }
+}
+
+/* Media Query for Desktop */
+@media (min-width: 1025px) {
+    .cta-buttons {
+        flex-direction: row; /* All buttons in one row for larger screens */
+        gap: 10px; /* Adjust gap between buttons */
+    }
+
+    .cta-buttons a {
+        width: 200px; /* Fixed width for each button */
+    }
+}
+
+
+
+li {
+    color: #111827;
+}
+
+.about-us-area {
+    margin-top: 30px;
+}
+
+.main-heading-agents, h2 {
+    margin: 0px;
+    color: #1E3A8A;
+    text-align: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    padding: 15px;
+    text-decoration: underline 2px;
+} 
+
+.main-heading-agents, h3 {
+    margin: 0px;
+    color: #1E3A8A;
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 15px;
+    text-decoration: underline 2px;
+} 
+
+.main-heading-text-h2 {
+    color: #1E3A8A;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.about-us-text {
+    padding: 13px;
+    color: #1E3A8A;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    text-decoration: solid; 
+}
+
+.about-us-text2 {
+    padding: 13px;
+    color: #1E3A8A;
+    text-align: center;
+    margin-top: 25px;
+    font-size: 18px;
+}
+
+
+
+
+.donationbutton {
+    width: 250px;
+    margin: 10px auto; /* Centering if needed in a flex or block container */
+    height: 40px;
+    border-radius: 20px;
+    background-color: #141452; /* Use `background-color` for clarity */
+    color: #ffffff;
+    font-size: 18px;
+    border: none; /* Remove default button borders */
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.donationbutton:hover {
+    width: 255px; /* Subtle growth effect */
+    height: 42px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 5px 8px 5px; /* Adjusted alpha for clarity */
+    background-color: #1a1a6e; /* Slightly lighter shade for hover effect */
+}
+
+
+.step-text {
+    color: rgb(255, 0, 0); margin-bottom: 5px;
+    font-size: 30px;
+    text-align: start;
+    margin-left: 10px;
+}
+
+.banner {
+    position: relative;
+    width: 90%; /* Make it smaller on desktop */
+    max-width: 1200px; /* Optional: Limit maximum width on larger screens */
+    height: 400px; /* Adjust height as needed */
+    overflow: hidden;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow around the banner */
+    margin: 0 auto; /* Center the banner */
+}
+
+.banner-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the container without stretching */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out, transform 1s ease-in-out; /* Smooth transition for fade and movement */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+.banner-img.active {
+    opacity: 1;
+    transform: scale(1.05); /* Slight zoom-in effect for active image */
+}
+
+@media (max-width: 768px) {
+    .banner {
+        width: calc(100% - 20px); /* Add spacing for mobile by reducing width */
+        height: 250px; /* Adjust height for smaller screens */
+        padding: 0 10px; /* Add padding to the sides for mobile */
+    }
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 10px;
+}
+
+.card {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    height: 350px; /* Adjust based on your content needs */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    padding: 5px;
+    max-width: auto;
+    height: 240px; /* Set a fixed height */
+    object-fit: fit; /* Ensures the image fills the area proportionally */
+    object-position: center; /* Centers the image within the box */
+    background-color: #ffffff; /* Fallback background color */
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-content h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.card-content p {
+    margin: 0 0 15px;
+    font-size: 14px;
+    color: #666;
+    flex-grow: 1;
+}
+
+.card-content button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #1E3A8A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card-content button:hover {
+    background-color: #0056b3;
+}
+
+@media (min-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 632px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 510px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    .card img {
+      padding: 5px;
+      max-width: auto;
+      height: 230px; /* Set a fixed height */
+    }
+}
+
+@media (max-width: 440px) {
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .card img {
+      padding: 5px;
+      max-width: 100%;
+      height: 230px; /* Set a fixed height */
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 20px;
+      justify-content: center;
+      padding: 5px;
+    }
+}
+
+
+
+#content {
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Popup Styling */
+  #pcWarning {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+  }
+
+  #pcWarning h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+
+  .pcWarning {
+      font-size: 20px;
+  }
+
+  #pcWarning img {
+    max-width: 400px;
+    margin: 10px 0;
+  }
+
+  #pcWarning button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  #continueButton {
+    background-color: #ff0000;
+    color: white;
+  }
+
+  /* Show popup and blur background for large screens */
+  @media (min-width: 750px) {
+    #pcWarning {
+      display: block;
+    }
+
+    .background.blur {
+      filter: blur(100px);
+    }
+
+    body.fixed {
+      overflow: hidden; /* Prevent scrolling */
+    }
+  }
+
+
+
+@media (max-width: 400px) {
+  .card-container {
+      grid-template-columns: repeat(1, 1fr);
+      margin-left: 64px;
+      margin-right: 64px;
+  }
+  .card img {
+    padding: 15px;
+    max-width: 100%;
+    height: 260px; /* Set a fixed height */
+  }
+}
+
+.agent-profile {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.logo img {
+    max-width: 200px;
+    height: auto;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+.section-group1 {
+    background-color: #8b8b8b2f;
+    border-radius: 10px;
+    width: 95%;
+    height: 400px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-group1 {
+     height: 450px;
+        }
+    }
+
+
+    .section-group2 {
+        background-color: #8b8b8b2f;
+        border-radius: 10px;
+        width: 95%;
+        height: 470px;
+    }
+    
+    
+/* Responsive Design */
+@media (max-width: 768px) {
+        .section-group2 {
+         height: 700px;
+            }
+        }
+
+
+
+
+
+
+
+.contact {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1E3A8A;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Footer Links */
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* Divider */
+.footer-divider {
+  border-top: 1px solid #ffffff;
+  margin: 15px auto;
+  width: 75%;
+}
+
+/* Footer Info */
+.footer-info {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-links a {
+    display: block;
+    margin: 20px 0;
+  }
+}
+.wrapper{
+width: 100%;
+
+}
+
+.container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  color: #ffeead;
+}
+
+.container > div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid black
+}
+
+/* Grid */
+.container {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 125px;
+  grid-auto-flow: dense; /* Fill all spaces with fitted images */
+}
+
+.horizontal {
+grid-column: span 2;
+}
+
+.vertical {
+grid-row: span 2;
+}
+
+.big {
+grid-column: span 2;
+grid-row: span 2;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 1024px){
+.wrapper{
+  width: 960px;
+  margin: 0 auto;
+}
+}
+.glass-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+}
+
+.form-container {
+  position: relative;
+  z-index: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
