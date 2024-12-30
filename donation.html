@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5237207026477215"
+     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -55,135 +57,19 @@
 
 
 
-
-        <style>
-            /* Styling for the donation card */
-            .donation-card {
-              background-color: white;
-              padding: 30px;
-              border-radius: 15px;
-              box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-              text-align: center;
-              width: 100%;
-              max-width: 400px;
-              box-sizing: border-box;
-            }
-          
-            .donation-title {
-              color: #333;
-              font-size: 28px;
-              margin-bottom: 15px;
-              font-weight: bold;
-            }
-          
-            .donation-description {
-              color: #555;
-              font-size: 18px;
-              margin-bottom: 25px;
-              line-height: 1.6;
-            }
-          
-            .input-donation {
-              padding: 12px;
-              font-size: 18px;
-              margin-top: 10px;
-              width: 100%;
-              max-width: 350px;
-              border: 1px solid #ddd;
-              border-radius: 8px;
-              text-align: left;
-              box-sizing: border-box;
-            }
-          
-            .payfast-button {
-              background-color: #1c80d2;
-              color: white;
-              padding: 14px 28px;
-              border-radius: 8px;
-              font-size: 18px;
-              text-align: center;
-              display: inline-block;
-              cursor: pointer;
-              border: none;
-              transition: background-color 0.3s;
-              width: 100%;
-              max-width: 350px;
-            }
-          
-            .payfast-button:hover {
-              background-color: #1768a5;
-            }
-          
-            .thank-you-message {
-              color: #333;
-              font-size: 16px;
-              margin-top: 30px;
-              font-style: italic;
-            }
-          </style>
-          </head>
-          <body>
-          
-          <center>
-            <div class="donation-card">
-              <p class="donation-description">
-                Your support means the world to me
-              </p>
-              
-              <!-- Donation Form -->
-              <div class="donation-button-container">
-                <form action="https://www.payfast.co.za/eng/process" method="post">
-                  <!-- PayFast Merchant Details (Replace these with your actual PayFast details) -->
-                  <input type="hidden" name="merchant_id" value="26472787">
-                  <input type="hidden" name="merchant_key" value="qbgvq9xm9ygz7">
-                  <input type="hidden" name="return_url" value="https://yourwebsite.com/thank-you"> <!-- Replace with your URL -->
-                  <input type="hidden" name="cancel_url" value="https://yourwebsite.com/cancel"> <!-- Replace with your URL -->
-                  <input type="hidden" name="notify_url" value="https://yourwebsite.com/notify"> <!-- Replace with your URL -->
-          
-                  <!-- Payment Information -->
-                  <input type="hidden" name="item_name" value="Donation"> <!-- Item Name (required by PayFast) -->
-                  <input type="hidden" name="item_id" value="donation-001"> <!-- A unique identifier for the donation -->
-          
-                  <!-- Allow user to enter custom donation amount -->
-                  <input type="text" name="amount" id="donation-amount" class="input-donation" placeholder="R 10.00" required min="10" step="0.01">
-          
-                  <!-- Donate Button -->
-                  <button type="submit" class="payfast-button">Donate with PayFast</button>
-                </form>
-              </div>
-            </div>
-          </center>
-          
-          <script>
-            // JavaScript to add "R" symbol before the amount and restrict input to numbers only
-            document.getElementById('donation-amount').addEventListener('input', function(e) {
-              // Remove all non-numeric characters except for the decimal point
-              var value = e.target.value.replace(/[^0-9.]/g, '');
-          
-              // If there's any input, prepend the "R" symbol, otherwise reset the value
-              if (value) {
-                e.target.value = 'R ' + value; // Add "R" before the value
-              } else {
-                e.target.value = ''; // If no number is entered, reset the input
-              }
-            });
-          
-            // Ensure the form submits only the numeric value (without "R")
-            document.querySelector('form').addEventListener('submit', function(e) {
-              var donationInput = document.getElementById('donation-amount');
-              var numericValue = donationInput.value.replace(/[^\d.]/g, ''); // Remove "R" symbol and any non-numeric characters
-              donationInput.value = numericValue; // Set the numeric value to be submitted
-            });
-          </script>
-          
-          </body>
-          </html>
-          
+<a href="https://pay.yoco.com/global-work-bridge">
+<button class="donate-text">Donate With Yoco</button>
+</a>
 
 
 
+<style>
+  .donate-text {
+    font-size: 20px;
+  }
+</style>
+      
 
-        
 
         
 
