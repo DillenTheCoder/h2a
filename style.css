@@ -546,7 +546,7 @@ li {
 }
 
 .card img {
-    padding: 5px;
+    padding: 10px;
     max-width: 100%; /* Ensures the image doesn't overflow */
     height: 240px; /* Set a consistent height */
     object-fit: fit; /* Ensures the whole image fits within the container */
